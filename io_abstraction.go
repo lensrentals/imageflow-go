@@ -45,6 +45,11 @@ func (file URL) toBuffer() ([]byte, error) {
 	return io.ReadAll(resp.Body)
 }
 
+// ToBuffer is exported for external use
+func (file URL) ToBuffer() ([]byte, error) {
+	return file.toBuffer()
+}
+
 func (file URL) toOutput(data []byte, m map[string][]byte) (map[string][]byte, error) {
 	return m, nil
 }
